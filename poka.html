@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKA - Character Selection</title>
+    <link rel="stylesheet" href="poka-style.css">
+</head>
+<body>
+    <div id="character-selection" class="selection-screen">
+        <div class="selection-container">
+            <h1>POKA</h1>
+            <p class="subtitle">Choose Your Character</p>
+            
+            <div class="characters-grid">
+                <!-- Knight -->
+                <div class="character-card" data-character="knight">
+                    <div class="character-portrait knight-portrait"></div>
+                    <h3>The Knight</h3>
+                    <p class="class">Balanced Warrior</p>
+                    <div class="stats">
+                        <div class="stat"><span class="label">HP:</span> <span class="value">120</span></div>
+                        <div class="stat"><span class="label">ATK:</span> <span class="value">8</span></div>
+                        <div class="stat"><span class="label">DEF:</span> <span class="value">6</span></div>
+                    </div>
+                    <p class="description">Versatile fighter with solid stats. Master swordsman.</p>
+                    <button class="select-btn">Select</button>
+                </div>
+
+                <!-- Quirrel -->
+                <div class="character-card" data-character="quirrel">
+                    <div class="character-portrait quirrel-portrait"></div>
+                    <h3>Quirrel</h3>
+                    <p class="class">Swift Nomad</p>
+                    <div class="stats">
+                        <div class="stat"><span class="label">HP:</span> <span class="value">90</span></div>
+                        <div class="stat"><span class="label">ATK:</span> <span class="value">9</span></div>
+                        <div class="stat"><span class="label">DEF:</span> <span class="value">4</span></div>
+                    </div>
+                    <p class="description">Fast and deadly. Superior mobility and speed.</p>
+                    <button class="select-btn">Select</button>
+                </div>
+
+                <!-- Hornet -->
+                <div class="character-card" data-character="hornet">
+                    <div class="character-portrait hornet-portrait"></div>
+                    <h3>Hornet</h3>
+                    <p class="class">Agile Assassin</p>
+                    <div class="stats">
+                        <div class="stat"><span class="label">HP:</span> <span class="value">100</span></div>
+                        <div class="stat"><span class="label">ATK:</span> <span class="value">10</span></div>
+                        <div class="stat"><span class="label">DEF:</span> <span class="value">3</span></div>
+                    </div>
+                    <p class="description">Highest damage. Chainable aerial combos.</p>
+                    <button class="select-btn">Select</button>
+                </div>
+
+                <!-- Zote -->
+                <div class="character-card" data-character="zote">
+                    <div class="character-portrait zote-portrait"></div>
+                    <h3>Zote</h3>
+                    <p class="class">Cowardly Knight</p>
+                    <div class="stats">
+                        <div class="stat"><span class="label">HP:</span> <span class="value">140</span></div>
+                        <div class="stat"><span class="label">ATK:</span> <span class="value">5</span></div>
+                        <div class="stat"><span class="label">DEF:</span> <span class="value">8</span></div>
+                    </div>
+                    <p class="description">Tanky defender. Bonus resilience at low HP.</p>
+                    <button class="select-btn">Select</button>
+                </div>
+
+                <!-- Ghost -->
+                <div class="character-card" data-character="ghost">
+                    <div class="character-portrait ghost-portrait"></div>
+                    <h3>The Ghost</h3>
+                    <p class="class">Mystic Spirit</p>
+                    <div class="stats">
+                        <div class="stat"><span class="label">HP:</span> <span class="value">110</span></div>
+                        <div class="stat"><span class="label">ATK:</span> <span class="value">7</span></div>
+                        <div class="stat"><span class="label">DEF:</span> <span class="value">5</span></div>
+                    </div>
+                    <p class="description">Spell caster. Summons shadow projectiles.</p>
+                    <button class="select-btn">Select</button>
+                </div>
+
+                <!-- Cloth -->
+                <div class="character-card" data-character="cloth">
+                    <div class="character-portrait cloth-portrait"></div>
+                    <h3>Cloth</h3>
+                    <p class="class">Skilled Traveler</p>
+                    <div class="stats">
+                        <div class="stat"><span class="label">HP:</span> <span class="value">105</span></div>
+                        <div class="stat"><span class="label">ATK:</span> <span class="value">7</span></div>
+                        <div class="stat"><span class="label">DEF:</span> <span class="value">6</span></div>
+                    </div>
+                    <p class="description">Balanced explorer. Hidden skill: Evasion.</p>
+                    <button class="select-btn">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <div id="hud">
+            <div id="player-stats">
+                <div class="stat">HP: <span id="hp">120</span>/<span id="max-hp">120</span></div>
+                <div class="stat">Level: <span id="level">1</span></div>
+                <div class="stat">EXP: <span id="exp">0</span>/<span id="exp-next">100</span></div>
+                <div class="stat">Area: <span id="area">Kingdom's Edge</span></div>
+            </div>
+            <div id="inventory">
+                <div class="stat">Essence: <span id="essence">0</span></div>
+                <div class="stat">ATK: <span id="damage">8</span></div>
+                <div class="stat">Skill: <span id="skill-name">Dash</span></div>
+            </div>
+            <div id="progress">
+                <div class="stat">Character: <span id="character-name">Knight</span></div>
+            </div>
+        </div>
+
+        <div id="game-world">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="dialog-box" class="hidden">
+            <div id="dialog-content"></div>
+            <div id="dialog-buttons"></div>
+        </div>
+
+        <div id="controls">
+            <p><strong>Controls:</strong> Arrow Keys to Move | X to Jump | C to Attack | V for Special Skill</p>
+        </div>
+    </div>
+
+    <script src="poka-script.js"></script>
+</body>
+</html>
