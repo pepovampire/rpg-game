@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    overflow: hidden;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #667eea;
+    font-size: 14px;
+}
+
+#player-stats,
+#inventory {
+    display: flex;
+    gap: 20px;
+}
+
+.stat {
+    padding: 5px 10px;
+    background-color: rgba(102, 126, 234, 0.3);
+    border-radius: 5px;
+    border: 1px solid #667eea;
+}
+
+.stat span {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+#game-world {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+canvas {
+    border: 3px solid #667eea;
+    background-color: #2a2a3a;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+#dialog-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.7);
+}
+
+#dialog-box.hidden {
+    display: none;
+}
+
+#dialog-content {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+#dialog-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.dialog-btn {
+    padding: 8px 15px;
+    background-color: #667eea;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.dialog-btn:hover {
+    background-color: #764ba2;
+    transform: scale(1.05);
+}
+
+#controls {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 2px solid #667eea;
+    text-align: center;
+    font-size: 12px;
+}
+
+#controls p {
+    color: #aaa;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
