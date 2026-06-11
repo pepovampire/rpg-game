@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple RPG Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="hud">
+            <div id="player-stats">
+                <div class="stat">HP: <span id="hp">100</span>/100</div>
+                <div class="stat">Level: <span id="level">1</span></div>
+                <div class="stat">EXP: <span id="exp">0</span>/<span id="exp-next">100</span></div>
+                <div class="stat">Area: <span id="area">Forest</span></div>
+            </div>
+            <div id="inventory">
+                <div class="stat">Gold: <span id="gold">0</span></div>
+                <div class="stat">Damage: <span id="damage">5</span></div>
+            </div>
+        </div>
+
+        <div id="game-world">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="dialog-box" class="hidden">
+            <div id="dialog-content"></div>
+            <div id="dialog-buttons"></div>
+        </div>
+
+        <div id="controls">
+            <p><strong>Controls:</strong> Arrow Keys to Move | Z to Jump | SPACE to Interact</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
